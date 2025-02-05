@@ -5,7 +5,6 @@ import { FlipWords } from "../ui/FlipWords";
 import Image from "next/image";
 import HandWavingIcon from "../../public/HandWavingIcon.png";
 import Button from "../atoms/button";
-import { span } from "framer-motion/client";
 // import MenuSvg from "../svg/menu-svg";
 // import { Highlight } from "../ui/hero-highlight";
 

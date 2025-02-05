@@ -1,8 +1,8 @@
 import React from "react";
 import Section from "./section";
-import { socials } from "@/constants";
-import Link from "next/link";
-import Image from "next/image";
+// import { socials } from "@/constants";
+// import Link from "next/link";
+// import Image from "next/image";
 
 type Props = {};
 
