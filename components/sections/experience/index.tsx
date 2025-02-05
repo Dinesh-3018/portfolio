@@ -3,7 +3,6 @@ import React from "react";
 import ArrowIcon from "../../../public/Admin/Arrow";
 import EnsVision from "./Details/Details";
 import { motion } from "framer-motion";
-import Section from "@/components/layout/section";
 import DetailsForSaptang from "./Details/DetailFor2";
 
 export default function Experience() {
@@ -55,7 +54,7 @@ const CompaniesBar = (props: { setDescriptionJob: any }) => {
     setDescriptionJob: (arg0: any) => void;
     DescriptionJob: any;
     CompanyNameBackgroundColorGreen: React.SetStateAction<boolean[]>;
-    ButtonOrderOfcompanyNameBackgroundColorGreen: string | number;
+    ButtonOrderOfcompanyNameBackgroundColorGreen: string | any;
     CompanyName:
       | string
       | number

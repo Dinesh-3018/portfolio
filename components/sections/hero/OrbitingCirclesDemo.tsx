@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import OrbitingCircles from "../../ui/orbiting-circles";
 import JsIcon from "../../../app/icons8-javascript-96.png";
 import TsIcon from "../../../app/icons8-typescript-96.png";
