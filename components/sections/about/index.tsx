@@ -8,7 +8,7 @@ export default function AboutMe() {
     ["Redux ", "TypeScript", "Git", "Docker"],
   ];
   return (
-    <Section id="about" className="bpy-20 flex snap-start  flex-col items-center">
+    <Section id="about" className="flex snap-start flex-col  items-center py-20">
       {/* // ? 0.1 About Me */}
       <div
         className="flex w-full flex-col space-y-24 px-4 sm:w-[500px] sm:px-0 

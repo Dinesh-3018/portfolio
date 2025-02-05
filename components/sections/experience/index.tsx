@@ -16,7 +16,7 @@ export default function Experience() {
   };
   const [DescriptionJob, setDescriptionJob] = React.useState("Freelancing");
   return (
-    <div className="bg-color-AAprimary flex flex-col items-center justify-center space-y-12 py-32">
+    <div className=" flex flex-col items-center justify-center space-y-12 py-32">
       <section className="flex flex-row items-center">
         <div className="flex flex-row items-center">
           <ArrowIcon className={"size-4 flex-none text-AAsecondary md:h-6 md:w-5"} />

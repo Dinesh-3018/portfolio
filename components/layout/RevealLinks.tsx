@@ -23,7 +23,7 @@ export const RevealLinks = () => {
           </div>
         </div>
         <section className="flex flex-row gap-x-3 text-white ">
-          <div className=" font-Header flex flex-row items-center ">
+          <div className="  flex flex-row items-center ">
             <FlipLink href="#">D</FlipLink>
             <FlipLink href="#">i</FlipLink>
             <FlipLink href="#">n</FlipLink>
@@ -49,7 +49,7 @@ export const RevealLinks = () => {
               ease: "easeOut",
             },
           }}
-          className="font-Header sm:text-md mt-10 text-sm tracking-wider text-gray-400 md:text-lg"
+          className="  sm:text-md mt-10 text-sm tracking-wider text-gray-400 md:text-lg"
         >
           I&apos;m a <span className=" text-color-AAsecondary">software engineer intern</span>, with
           strong
