@@ -16,7 +16,7 @@ export default function SomethingIveBuilt() {
   return (
     <Section
       id="project"
-      className=" bg- flex w-full flex-col space-y-12   px-4  
+      className=" flex w-full flex-col space-y-12   px-4  
      py-32 sm:px-16 md:px-16 lg:px-24 xl:space-y-28 2xl:px-72"
     >
       {/* // ? Title  */}

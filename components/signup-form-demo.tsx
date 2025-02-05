@@ -58,7 +58,7 @@ export default function ContactSuggestionForm() {
   };
 
   return (
-    <div className="shadow-input mx-auto mt-64 w-full max-w-4xl rounded-md border border-AAsecondary bg-n-8 p-6 md:rounded-2xl md:p-8">
+    <div className=" mx-auto mt-64 w-full max-w-4xl rounded-md border border-AAsecondary bg-n-8 p-6 md:rounded-2xl md:p-8">
       <h2 className="text-xl font-bold text-white">Contact & Suggestion Form</h2>
       <p className="mt-2 text-sm text-white">
         Send us your message or suggestions, and I'll get back to you!
