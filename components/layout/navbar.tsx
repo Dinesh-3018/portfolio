@@ -78,7 +78,6 @@ const Navbar = (props: Props) => {
                 className={cn(
                   `block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1`,
                   "px-6 py-6 md:py-5 lg:-mr-0.25 lg:text-xs lg:font-semibold",
-                  item.onlyMobile && "lg:hidden",
                   item.url === hash ? "z-2 lg:text-n-1" : "lg:text-n-1/50",
                   "lg:leading-5 lg:hover:text-color-AAsecondary xl:px-12"
                 )}

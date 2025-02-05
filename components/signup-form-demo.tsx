@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
@@ -13,20 +14,34 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  message?: string;
+}
+
 export default function ContactSuggestionForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
     message: "",
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = formSchema.safeParse(formData);
     if (!result.success) {
@@ -43,15 +58,15 @@ export default function ContactSuggestionForm() {
   };
 
   return (
-    <div className="shadow-input mx-auto mt-64 w-full max-w-4xl rounded-md  border border-AAsecondary bg-n-8 p-6 md:rounded-2xl md:p-8">
+    <div className="shadow-input mx-auto mt-64 w-full max-w-4xl rounded-md border border-AAsecondary bg-n-8 p-6 md:rounded-2xl md:p-8">
       <h2 className="text-xl font-bold text-white">Contact & Suggestion Form</h2>
-      <p className="mt-2 text-sm  text-white">
+      <p className="mt-2 text-sm text-white">
         Send us your message or suggestions, and I'll get back to you!
       </p>
 
       <form className="my-6" onSubmit={handleSubmit}>
         <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-          <LabelInputContainer>
+          <LabelInputContainer className="ml-0">
             <Label htmlFor="firstName" className="text-white">
               First Name
             </Label>
@@ -62,11 +77,11 @@ export default function ContactSuggestionForm() {
               type="text"
               value={formData.firstName}
               onChange={handleChange}
-              className=" bg-stroke-1 text-white"
+              className="bg-stroke-1 text-white"
             />
             {errors.firstName && <p className="text-sm text-red-500">{errors.firstName}</p>}
           </LabelInputContainer>
-          <LabelInputContainer>
+          <LabelInputContainer className="ml-0">
             <Label htmlFor="lastName" className="text-white">
               Last Name
             </Label>
@@ -75,7 +90,7 @@ export default function ContactSuggestionForm() {
               name="lastName"
               placeholder="G"
               type="text"
-              className=" bg-stroke-1 text-white"
+              className="bg-stroke-1 text-white"
               value={formData.lastName}
               onChange={handleChange}
             />
@@ -89,7 +104,7 @@ export default function ContactSuggestionForm() {
           </Label>
           <Input
             id="email"
-            className=" bg-stroke-1 text-white"
+            className="bg-stroke-1 text-white"
             name="email"
             placeholder="dineshbuddy4@gmail.com"
             type="email"
@@ -104,7 +119,7 @@ export default function ContactSuggestionForm() {
             Your Message
           </Label>
           <Input
-            className=" bg-stroke-1 text-white"
+            className="bg-stroke-1 text-white"
             id="message"
             name="message"
             placeholder="Write your message here..."
@@ -121,6 +136,11 @@ export default function ContactSuggestionForm() {
   );
 }
 
-const LabelInputContainer = ({ children, className }) => {
+interface LabelInputContainerProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const LabelInputContainer: React.FC<LabelInputContainerProps> = ({ children, className }) => {
   return <div className={cn("flex flex-col space-y-2 w-full", className)}>{children}</div>;
 };

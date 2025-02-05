@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const images = {
   yourlogo: "../assets/Logowhite.png",
   brainwave: "../assets/Logowhite.png",

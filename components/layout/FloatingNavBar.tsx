@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { FloatingNav } from "../ui/FloatingNav";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { IconMessage } from "@tabler/icons-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export function FloatingNavBar() {
