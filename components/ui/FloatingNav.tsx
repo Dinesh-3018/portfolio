@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
