@@ -34,12 +34,12 @@ export default function SomethingIveBuilt() {
         {/* <div className="h-[0.2px] w-full bg-gray-400 "></div> */}
       </div>
 
-      <div className="flex flex-col   space-y-8 md:space-y-28 xl:space-y-36">
+      <div className="flex flex-col    space-y-8 md:space-y-28 xl:space-y-36">
         {/* // ?  Project  1 */}
-        <div data-aos="fade-up" className="relative w-full md:grid md:h-96 md:grid-cols-12 ">
+        <div data-aos="fade-up" className="md:grid-cols relative w-full md:grid md:h-96">
           {/* Left image */}
           <div
-            className="bg- absolute z-10  hidden 
+            className=" absolute z-10  hidden 
           size-full grid-cols-12 content-center   py-4 md:grid"
           >
             <div className="relative col-span-7 size-full rounded ">
@@ -54,21 +54,21 @@ export default function SomethingIveBuilt() {
               <a href="https://dineshg-aids.github.io/Buddyb/" target={"_blank"} rel="noreferrer">
                 <div
                   // onClick={}
-                  className="bg- absolute size-full rounded   opacity-30 
+                  className=" absolute size-full rounded   opacity-30 
            transition-opacity duration-300 hover:cursor-pointer hover:opacity-0"
                 ></div>
               </a>
 
-              <Image src={BlogPrjImage} alt="Project Screen shot" className="rounded-xl" />
+              <Image src={BlogPrjImage} alt="Project Screen shot" className="-ml-20 rounded-xl" />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" size-full content-center  py-4 md:absolute md:grid md:grid-cols-12 ">
+          <div className=" size-full content-center  py-12 md:absolute md:grid md:grid-cols-12">
             <div className="absolute z-0 size-full bg-opacity-70">
               <div className="relative size-full">
                 <div className="absolute z-10 size-full     opacity-10"></div>
-                <div className="bg- absolute z-10 size-full   opacity-80"></div>
+                <div className=" absolute z-10 size-full   opacity-80"></div>
                 {/* <Img src={"/ensvision.jpg"} alt={"Project Screen shot"} className={`size-full `} /> */}
               </div>
             </div>
@@ -135,17 +135,17 @@ export default function SomethingIveBuilt() {
         <div data-aos="fade-up" className="relative w-full md:grid md:h-96 md:grid-cols-12  ">
           {/* Left image */}
           <div
-            className="bg- absolute z-10  hidden 
+            className=" absolute z-10  hidden 
           size-full grid-cols-12 content-center   py-4 md:grid "
           >
             <div className="relative col-span-7 col-start-6 size-full rounded ">
               <a href={""} target="_blank" rel="noreferrer">
                 <div
-                  className="bg- absolute size-full rounded   opacity-50 
+                  className=" absolute size-full rounded   opacity-50 
            transition-opacity duration-300 hover:cursor-pointer hover:opacity-0"
                 ></div>
               </a>
-              <Image src={uzPrjImg} alt="Project Screen shot" className="rounded-xl" />
+              <Image src={uzPrjImg} alt="Project Screen shot" className="ml-20 rounded-xl" />
             </div>
           </div>
 
@@ -155,7 +155,7 @@ export default function SomethingIveBuilt() {
             <div className="absolute z-0 size-full bg-opacity-70 md:order-2">
               <div className="relative size-full">
                 <div className="absolute z-10 size-full     opacity-10"></div>
-                <div className="bg- absolute z-10 size-full   opacity-80"></div>
+                <div className=" absolute z-10 size-full   opacity-80"></div>
                 {/* <Image src={BlogPrjImage} alt="Project Screen shot" className="rounded-xl" /> */}
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function SomethingIveBuilt() {
                   <span className="text-AAsecondary"># </span> PayPal Integration
                 </span>
               </ul>
-              <div className="fle-row z-10 flex space-x-5 ">
+              <div className="z-10 flex flex-row space-x-5 ">
                 <GithubIcon link="https://github.com/DineshG-AIDS/uzhavanLanding" />
                 <a
                   href="https://dineshg-aids.github.io/uzhavanLanding/"
@@ -220,7 +220,7 @@ export default function SomethingIveBuilt() {
         <div data-aos="fade-up" className="relative w-full md:grid md:h-96 md:grid-cols-12 ">
           {/* Left image */}
           <div
-            className="bg- absolute z-10  hidden 
+            className=" absolute z-10  hidden 
           size-full grid-cols-12 content-center   py-4 md:grid"
           >
             <div className="relative col-span-7 size-full rounded ">
@@ -236,7 +236,7 @@ export default function SomethingIveBuilt() {
                 ></div>
               </Link>
 
-              <Image src={PgPrjImg} alt="Project Screen shot" className="rounded-xl" />
+              <Image src={PgPrjImg} alt="Project Screen shot" className="-ml-20 rounded-xl" />
             </div>
           </div>
 
@@ -246,7 +246,7 @@ export default function SomethingIveBuilt() {
             <div className="absolute z-0 size-full bg-opacity-70">
               <div className="relative size-full">
                 <div className="absolute z-10 size-full     opacity-10"></div>
-                <div className="bg- absolute z-10 size-full   opacity-80"></div>
+                <div className=" absolute z-10 size-full   opacity-80"></div>
                 {/* <Img src={"/typing.png"} alt={"Project Screen shot"} className={`size-full `} /> */}
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function SomethingIveBuilt() {
         <div data-aos="fade-up" className="relative w-full md:grid md:h-96 md:grid-cols-12  ">
           {/* Left image */}
           <div
-            className="bg- absolute z-10  hidden 
+            className=" absolute z-10  hidden 
           size-full grid-cols-12 content-center   py-4 md:grid "
           >
             <div className="relative col-span-7 col-start-6 size-full rounded ">
@@ -324,11 +324,11 @@ export default function SomethingIveBuilt() {
                 rel="noreferrer"
               >
                 <div
-                  className="bg- absolute size-full rounded   opacity-50 
+                  className=" absolute size-full rounded   opacity-50 
            transition-opacity duration-300 hover:cursor-pointer hover:opacity-0"
                 ></div>
               </a>
-              <Image src={DwritePrjImg} alt="Project Screen shot" className="  rounded-xl" />{" "}
+              <Image src={DwritePrjImg} alt="Project Screen shot" className="ml-20  rounded-xl" />{" "}
             </div>
           </div>
 
@@ -338,7 +338,7 @@ export default function SomethingIveBuilt() {
             <div className="absolute z-0 size-full bg-opacity-70 md:order-2">
               <div className="relative size-full">
                 <div className="absolute z-10 size-full     opacity-10"></div>
-                <div className="bg- absolute z-10 size-full   opacity-80"></div>
+                <div className=" absolute z-10 size-full   opacity-80"></div>
                 {/* <Image src={BlogPrjImage} alt="Project Screen shot" className="rounded-xl" /> */}
               </div>
             </div>
@@ -397,19 +397,19 @@ export default function SomethingIveBuilt() {
         <div data-aos="fade-up" className="relative w-full md:grid md:h-96 md:grid-cols-12">
           {/* Left image */}
           <div
-            className="bg- absolute z-10  hidden 
+            className=" absolute z-10  hidden 
           size-full grid-cols-12 content-center   py-4 md:grid"
           >
             <div className="relative col-span-7 size-full rounded ">
               <a href="https://github.com/DineshG-AIDS" target={"_blank"} rel="noreferrer">
                 <div
                   // onClick={}
-                  className="bg- absolute size-full rounded   opacity-50 
+                  className=" absolute size-full rounded   opacity-50 
            transition-opacity duration-300 hover:cursor-pointer hover:opacity-0"
                 ></div>
               </a>
 
-              <div className="bg- absolute ml-4 mt-2  rounded   px-2 ">
+              <div className=" absolute ml-4 mt-2  rounded   px-2 ">
                 <span className="text-xl text-AAsecondary">Under Construction . . . . .</span>
               </div>
 
@@ -427,13 +427,13 @@ export default function SomethingIveBuilt() {
             <div className="absolute z-0 size-full bg-opacity-70">
               <div className="relative size-full">
                 <div className="absolute z-10 size-full     opacity-10"></div>
-                <div className="bg- absolute z-10 size-full   opacity-80"></div>
+                <div className=" absolute z-10 size-full   opacity-80"></div>
                 {/* <Img src={"/haircut.png"} alt={"Project Screen shot"} className={`size-full `} /> */}
               </div>
             </div>
             <div className="absolute ml-4   mt-2  w-full rounded  pr-8 text-end">
               <div className="w-full"></div>
-              <span className="bg- rounded   px-2 py-1 text-AAsecondary sm:text-lg">
+              <span className=" rounded   px-2 py-1 text-AAsecondary sm:text-lg">
                 Under Construction...
               </span>
             </div>
