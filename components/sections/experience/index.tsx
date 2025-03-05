@@ -16,11 +16,11 @@ export default function Experience() {
   };
   const [DescriptionJob, setDescriptionJob] = React.useState("Freelancing");
   return (
-    <div className=" flex flex-col items-center justify-center space-y-12 py-32">
-      <section className="flex flex-row items-center">
+    <div className="flex flex-col space-y-12 py-44 sm:pl-4 md:pl-8 lg:pl-12 xl:pl-48">
+      <section className="flex flex-row items-start">
         <div className="flex flex-row items-center">
-          <ArrowIcon className={"size-4 flex-none text-AAsecondary md:h-6 md:w-5"} />
-          <span className="font-sans text-sm text-AAsecondary  sm:text-xl"> 02.</span>
+          <ArrowIcon className="size-4 flex-none text-AAsecondary md:h-6 md:w-5" />
+          <span className="font-sans text-sm text-AAsecondary sm:text-xl"> 02.</span>
         </div>
 
         <span className="px-3 text-lg font-bold tracking-wider text-gray-200 opacity-85 md:text-2xl">
@@ -28,11 +28,9 @@ export default function Experience() {
         </span>
         <div className="h-[0.2px] w-16 bg-gray-400 sm:w-44 md:w-80"></div>
       </section>
+
       {/* // ? Where I've Worked Content section */}
-      <section
-        className="flex flex-col items-center justify-center space-y-4 md:flex-row
-      md:items-start md:justify-center md:space-x-4 md:space-y-0 "
-      >
+      <section className="z-50 flex flex-col space-y-4 md:flex-row md:items-start md:space-x-4 md:space-y-0">
         {/* // ? Left side of Where I've Worked, contains the bar and name of companies */}
         <CompaniesBar setDescriptionJob={setDescriptionJob} />
         {/* // ? Description for The job */}

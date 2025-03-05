@@ -12,19 +12,20 @@ import Image from "next/image";
 import uzPrjImg from "../../../public/assets/Uz_Prj_img.png";
 import PgPrjImg from "../../../public/assets/Pg_rPrj_img.png";
 import DwritePrjImg from "../../../public/assets/Blog_d_Prj_img.png";
+import { StarsBackground } from "@/components/ui/stars-background";
 export default function SomethingIveBuilt() {
   return (
     <Section
       id="project"
-      className=" flex w-full flex-col space-y-12   px-4  
+      className=" px- flex w-full flex-col   space-y-12  
      py-32 sm:px-16 md:px-16 lg:px-24 xl:space-y-28 2xl:px-72"
     >
       {/* // ? Title  */}
-      <div data-aos="fade-up" className=" flex flex-row  items-center md:px-0">
+      <div data-aos="fade-up" className=" -pl-10 flex flex-row  items-center md:px-0 xl:-ml-24">
         <ArrowIcon
           className={"size-5 flex-none translate-y-[2px] text-AAsecondary md:h-6 md:w-5"}
         />
-        <div className="flex-none flex-row items-center space-x-2 pr-2">
+        <div className=" flex-none flex-row items-center space-x-2">
           <span className="font-sans text-sm text-AAsecondary  sm:text-xl"> 03.</span>
           <span className=" w-44 text-lg font-bold tracking-wider text-gray-200 opacity-85 md:w-56 md:text-2xl">
             {" "}
@@ -34,7 +35,7 @@ export default function SomethingIveBuilt() {
         {/* <div className="h-[0.2px] w-full bg-gray-400 "></div> */}
       </div>
 
-      <div className="flex flex-col    space-y-8 md:space-y-28 xl:space-y-36">
+      <div className="flex flex-col space-y-8 md:space-y-28 xl:space-y-36">
         {/* // ?  Project  1 */}
         <div data-aos="fade-up" className="md:grid-cols relative w-full md:grid md:h-96">
           {/* Left image */}
@@ -481,6 +482,7 @@ export default function SomethingIveBuilt() {
           </div>
         </div>
       </div>
+      <StarsBackground />
     </Section>
   );
 }

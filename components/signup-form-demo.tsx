@@ -9,6 +9,8 @@ import { z } from "zod";
 import Button from "./atoms/button";
 import axios from "axios";
 import { FaUnlockAlt } from "react-icons/fa";
+import DisclaimerIcon from "../public/assets/danger.png";
+import Image from "next/image";
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(1, "Last name must be at least 2 characters"),
@@ -92,10 +94,10 @@ export default function ContactSuggestionForm() {
         message: newErrors.message?._errors[0],
       });
 
-      return; 
+      return;
     }
 
-    setErrors({}); 
+    setErrors({});
 
     await axios.post("https://portfolio-backend-qu7x.onrender.com/users", submittedData);
 
@@ -108,9 +110,18 @@ export default function ContactSuggestionForm() {
   };
 
   return (
-    <div className="mx-auto mt-64 w-full max-w-4xl rounded-md border border-AAsecondary bg-n-8 p-6 md:rounded-2xl md:p-8">
-      <h2 className="text-xl font-bold text-white">Contact & Suggestion Form</h2>
-      <p className="mt-2 text-sm text-white">
+    <div className="mx-auto mt-64 w-full max-w-4xl rounded-2xl border border-AAsecondary bg-n-8 p-6 md:rounded-2xl md:p-8">
+      <div className="flex flex-row items-center justify-between">
+        <div>
+          {" "}
+          <h2 className="text-xl font-bold text-white">Contact & Suggestion Form</h2>
+        </div>
+        <div className=" flex  w-32 cursor-default  items-center rounded-full border border-AAsecondary p-2 text-AAsecondary">
+          <Image src={DisclaimerIcon} alt="Icon" width={20} />
+          <span className="block pl-2  text-sm sm:inline">Disclaimer</span>
+        </div>
+      </div>
+      <p className=" text-sm text-white">
         Send us your message or suggestions, and I'll get back to you!
       </p>
 
