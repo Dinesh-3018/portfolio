@@ -8,9 +8,11 @@ type Props = {};
 
 const Contact = (props: Props) => {
   return (
-    <Section id="contact" className="p-3 sm:p-3 md:p-3 lg:p-3 ">
-      <SignupFormDemo />
-    </Section>
+    <>
+      <Section id="contact" className="p-3 sm:p-3 md:p-3 lg:p-3 ">
+        <SignupFormDemo />
+      </Section>
+    </>
   );
 };
 
