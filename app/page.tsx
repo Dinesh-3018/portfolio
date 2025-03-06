@@ -2,7 +2,6 @@ import { FloatingNavBar } from "@/components/layout/FloatingNavBar";
 import Footer from "@/components/layout/footer";
 import AboutMe from "@/components/sections/about";
 import Contact from "@/components/sections/Contact";
-// import TestIdexForExp from "@/components/sections/experience/TestIdexForExp";
 import Hero from "@/components/sections/hero";
 import SomethingIveBuilt from "@/components/sections/projects";
 import ExperienceBuddy from "@/components/sections/roadmap";
