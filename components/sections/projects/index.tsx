@@ -140,7 +140,11 @@ export default function SomethingIveBuilt() {
           size-full grid-cols-12 content-center   py-4 md:grid "
           >
             <div className="relative col-span-7 col-start-6 size-full rounded ">
-              <a href={""} target="_blank" rel="noreferrer">
+              <a
+                href={"https://dineshg-aids.github.io/uzhavanLanding/"}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div
                   className=" absolute size-full rounded   opacity-50 
            transition-opacity duration-300 hover:cursor-pointer hover:opacity-0"
@@ -226,6 +230,7 @@ export default function SomethingIveBuilt() {
           >
             <div className="relative col-span-7 size-full rounded ">
               <Link
+                target={"_blank"}
                 href={
                   "https://pg-review-guard-frontend-ie2p4t77w-dineshgaids-projects.vercel.app/home"
                 }
@@ -259,6 +264,7 @@ export default function SomethingIveBuilt() {
               <div className="z-10 flex flex-col space-y-1 md:items-end">
                 <span className="text-base text-AAsecondary">Recent Project</span>
                 <Link
+                  target={"_blank"}
                   href={
                     "https://pg-review-guard-frontend-ie2p4t77w-dineshgaids-projects.vercel.app/home"
                   }
@@ -350,7 +356,10 @@ export default function SomethingIveBuilt() {
             >
               <div className="z-10 flex flex-col  space-y-1">
                 <span className="text-base text-AAsecondary">My Blog App</span>
-                <Link href={"https://d-writes-na6k89zux-dineshg-aids.vercel.app/"}>
+                <Link
+                  target={"_blank"}
+                  href={"https://d-writes-na6k89zux-dineshg-aids.vercel.app/"}
+                >
                   <span className=" text-xl font-bold text-AAsecondary hover:cursor-pointer md:text-gray-200">
                     Dwrites
                   </span>

@@ -116,11 +116,40 @@ export default function ContactSuggestionForm() {
           {" "}
           <h2 className="text-xl font-bold text-white">Contact & Suggestion Form</h2>
         </div>
-        <div className=" flex  w-32 cursor-default  items-center rounded-full border border-AAsecondary p-2 text-AAsecondary">
-          <Image src={DisclaimerIcon} alt="Icon" width={20} />
-          <span className="block pl-2  text-sm sm:inline">Disclaimer</span>
+
+        <div className="group relative inline-block">
+          <div className=" flex w-32 cursor-pointer items-center  gap-x-1 rounded-full border-2 border-AAsecondary p-2 text-AAsecondary">
+            <span className="block pl-1 text-sm font-medium sm:inline">Disclaimer</span>
+
+            <Image src={DisclaimerIcon} alt="Icon" width={20} />
+          </div>
+          <div className="invisible absolute bottom-full left-1/2 mb-3 w-72 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/95 to-gray-800/95 p-4 shadow-[0_0_30px_rgba(79,70,229,0.15)] backdrop-blur-md">
+              <div className="mb-2 flex items-center gap-3">
+                <div className="flex size-8 items-center justify-center rounded-full bg-AAsecondary/20">
+                  <svg viewBox="0 0 20 20" fill="currentColor" className="size-4 text-AAsecondary">
+                    <path
+                      clipRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-sm font-semibold text-white">Note</h3>
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm text-gray-300">
+                  My portfolio backend on Render may enter sleep mode after 15 minutes. If the
+                  submission delays or fails, please try again. Thanks for your patience!{" "}
+                </p>
+              </div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-50 blur-xl" />
+              <div className="absolute -bottom-1.5 left-1/2 size-3 -translate-x-1/2 rotate-45 border-b border-r border-white/10 bg-gradient-to-br from-gray-900/95 to-gray-800/95" />
+            </div>
+          </div>
         </div>
       </div>
+
       <p className=" text-sm text-white">
         Send us your message or suggestions, and I'll get back to you!
       </p>

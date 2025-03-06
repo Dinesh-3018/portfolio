@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { FloatingNav } from "../ui/FloatingNav";
-import { IconMessage } from "@tabler/icons-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-
+import { SiLeetcode } from "react-icons/si";
 export function FloatingNavBar() {
   const navItems = [
     {
@@ -18,8 +17,8 @@ export function FloatingNavBar() {
     },
     {
       name: "Contact",
-      link: "/",
-      icon: <IconMessage className="size-4 text-white hover:text-color-AAsecondary" />,
+      link: "https://leetcode.com/u/dinesh_rg/",
+      icon: <SiLeetcode className="size-4 text-white hover:text-color-AAsecondary" />,
     },
   ];
 
