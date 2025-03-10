@@ -9,6 +9,8 @@ import ButtonGradient from "@/components/svg/button-gradient";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
+  console.log("hello world");
+  
   return (
     <main>
       <div className={cn("overflow-hidden  ")}>
