@@ -44,7 +44,7 @@ export default function SomethingIveBuilt() {
           size-full grid-cols-12 content-center   py-4 md:grid"
           >
             <div className="relative col-span-7 size-full rounded ">
-              <Link href={"https://dineshg-aids.github.io/Buddyb/"}>
+              <Link href={"https://buddysblog.vercel.app/"}>
                 <div
                   // onClick={}
                   className="absolute size-full rounded opacity-20     
@@ -52,7 +52,7 @@ export default function SomethingIveBuilt() {
                 ></div>
               </Link>
 
-              <a href="https://dineshg-aids.github.io/Buddyb/" target={"_blank"} rel="noreferrer">
+              <a href="https://buddysblog.vercel.app/" target={"_blank"} rel="noreferrer">
                 <div
                   // onClick={}
                   className=" absolute size-full rounded   opacity-30 
@@ -80,11 +80,7 @@ export default function SomethingIveBuilt() {
             >
               <div className="z-10 flex flex-col space-y-1 md:items-end">
                 <span className="text-base text-AAsecondary">Portfolio Version 1</span>
-                <a
-                  href="https://dineshg-aids.github.io/Buddyb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://buddysblog.vercel.app/" target="_blank" rel="noopener noreferrer">
                   <span className=" text-xl font-bold text-AAsecondary hover:cursor-pointer md:text-gray-200">
                     Buddy Blog
                   </span>
@@ -123,9 +119,9 @@ export default function SomethingIveBuilt() {
               </ul>
 
               <div className="fle-row z-10 flex space-x-5 ">
-                <GithubIcon link="https://github.com/DineshG-AIDS/Buddyb" />
-                <a href="https://dineshg-aids.github.io/Buddyb/" target={"_blank"} rel="noreferrer">
-                  <ExternalLink url={"https://dineshg-aids.github.io/Buddyb/"} />
+                <GithubIcon link="https://github.com/Dinesh-3018/Buddyb" />
+                <a href="https://buddysblog.vercel.app/" target={"_blank"} rel="noreferrer">
+                  <ExternalLink url={"https://buddysblog.vercel.app/"} />
                 </a>
               </div>
             </div>
@@ -141,7 +137,7 @@ export default function SomethingIveBuilt() {
           >
             <div className="relative col-span-7 col-start-6 size-full rounded ">
               <a
-                href={"https://dineshg-aids.github.io/uzhavanLanding/"}
+                href={"https://dinesh-3018.github.io/uzhavanLanding/"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -172,7 +168,7 @@ export default function SomethingIveBuilt() {
               <div className="z-10 flex flex-col  space-y-1">
                 <span className="text-base text-AAsecondary">First React Project</span>
                 <a
-                  href="https://dineshg-aids.github.io/uzhavanLanding/"
+                  href="https://dinesh-3018.github.io/uzhavanLanding/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -209,13 +205,13 @@ export default function SomethingIveBuilt() {
                 </span>
               </ul>
               <div className="z-10 flex flex-row space-x-5 ">
-                <GithubIcon link="https://github.com/DineshG-AIDS/uzhavanLanding" />
+                <GithubIcon link="https://github.com/Dinesh-3018/uzhavanLanding" />
                 <a
-                  href="https://dineshg-aids.github.io/uzhavanLanding/"
+                  href="https://dinesh-3018.github.io/uzhavanLanding/"
                   target={"_blank"}
                   rel="noreferrer"
                 >
-                  <ExternalLink url={"https://dineshg-aids.github.io/uzhavanLanding/"} />
+                  <ExternalLink url={"https://dinesh-3018.github.io/uzhavanLanding/"} />
                 </a>
               </div>
             </div>
@@ -306,7 +302,7 @@ export default function SomethingIveBuilt() {
                 </span>
               </ul>
               <div className="fle-row z-10 flex space-x-5 ">
-                <GithubIcon link="https://github.com/DineshG-AIDS/PG_review_guard_frontend" />
+                <GithubIcon link="https://github.com/Dinesh-3018/PG_review_guard_frontend" />
                 <ExternalLink
                   url={
                     "https://pg-review-guard-frontend-ie2p4t77w-dineshgaids-projects.vercel.app/home"
@@ -396,7 +392,7 @@ export default function SomethingIveBuilt() {
                 </span>
               </ul>
               <div className="fle-row z-10 flex space-x-5 ">
-                <GithubIcon link="https://github.com/DineshG-AIDS/DWrites" />
+                <GithubIcon link="https://github.com/Dinesh-3018/DWrites" />
                 <ExternalLink url={"https://d-writes-na6k89zux-dineshg-aids.vercel.app/"} />
               </div>
             </div>
@@ -411,7 +407,7 @@ export default function SomethingIveBuilt() {
           size-full grid-cols-12 content-center   py-4 md:grid"
           >
             <div className="relative col-span-7 size-full rounded ">
-              <a href="https://github.com/DineshG-AIDS" target={"_blank"} rel="noreferrer">
+              <a href="https://github.com/Dinesh-3018" target={"_blank"} rel="noreferrer">
                 <div
                   // onClick={}
                   className=" absolute size-full rounded   opacity-50 
@@ -453,7 +449,7 @@ export default function SomethingIveBuilt() {
             >
               <div className="z-10 flex flex-col space-y-1 md:items-end">
                 <span className="text-base text-AAsecondary">Recent Project</span>
-                <a href="https://github.com/DineshG-AIDS" target={"_blank"} rel="noreferrer">
+                <a href="https://github.com/Dinesh-3018" target={"_blank"} rel="noreferrer">
                   <span className=" text-xl font-bold text-AAsecondary hover:cursor-pointer md:text-gray-200">
                     Where is Application ?
                   </span>
@@ -485,7 +481,7 @@ export default function SomethingIveBuilt() {
                 </span>
               </ul>
               <div className="fle-row z-10 flex space-x-5 pt-2 sm:pt-0">
-                <GithubIcon link="https://github.com/DineshG-AIDS" />
+                <GithubIcon link="https://github.com/Dinesh-3018" />
               </div>
             </div>
           </div>

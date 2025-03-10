@@ -12,7 +12,7 @@ export function FloatingNavBar() {
     },
     {
       name: "About",
-      link: "https://github.com/DineshG-AIDS",
+      link: "https://github.com/Dinesh-3018",
       icon: <FaGithub className="size-4 text-white hover:text-color-AAsecondary" />,
     },
     {
