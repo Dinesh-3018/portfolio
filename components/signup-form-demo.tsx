@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useEffect, useState } from "react";
+import CryptoJS from "crypto-js";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -17,7 +18,6 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
   message: z.string().min(1, "Message Length Should be Min 2 Length"),
 });
-import CryptoJS from "crypto-js";
 
 interface FormData {
   firstName: string;
