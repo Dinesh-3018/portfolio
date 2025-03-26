@@ -5,12 +5,10 @@ import { RevealLinks } from "@/components/layout/RevealLinks";
 // import { BackgroundBeams } from "@/components/ui/background-beams";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { OrbitingCirclesDemo } from "./OrbitingCirclesDemo";
 import Section from "@/components/layout/section";
 import axios from "axios";
-
-type Props = {};
 
 interface HeroProps {
   HandlerForStatus: (status: boolean) => void;
