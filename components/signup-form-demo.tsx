@@ -17,6 +17,7 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
   message: z.string().min(1, "Message Length Should be Min 2 Length"),
 });
+import CryptoJS from "crypto-js";
 
 interface FormData {
   firstName: string;
@@ -31,8 +32,10 @@ interface FormErrors {
   email?: string;
   message?: string;
 }
-
-export default function ContactSuggestionForm() {
+type Props = {
+  UserStatusActive: boolean;
+};
+export default function ContactSuggestionForm({ UserStatusActive }: Props) {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -42,7 +45,16 @@ export default function ContactSuggestionForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [allowedCount, setAllowedCount] = useState(0);
-
+  const [anonymousCount, setAnonymousCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const SECRET_KEY = "mz/lFqGwzGocYHUM92TG4g==";
+  const encryptValue = (value: string) => {
+    return CryptoJS.AES.encrypt(value, SECRET_KEY).toString();
+  };
+  const decryptValue = (encryptedValue: string) => {
+    const bytes = CryptoJS.AES.decrypt(encryptedValue, SECRET_KEY);
+    return bytes.toString(CryptoJS.enc.Utf8);
+  };
   useEffect(() => {
     const savedCount = Number(localStorage.getItem("submissionCount")) || 0;
     setAllowedCount(savedCount);
@@ -53,7 +65,7 @@ export default function ContactSuggestionForm() {
     return {
       firstName: `Anonymous${randomId}`,
       lastName: `AnonymousLastName${randomId}`,
-      email: `anonymoususer${randomId}@dinesh.com`,
+      email: `anonymoususer${randomId}@email.com`,
     };
   };
 
@@ -64,8 +76,23 @@ export default function ContactSuggestionForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (allowedCount >= 5) {
+    const normalLimit = 5;
+    const anonymousLimit = 2;
+
+    const storedCount =
+      Number(decryptValue(localStorage.getItem("mz/lFqGwzGocYHUM92TG4g==") || "")) || 0;
+    const storedAnonymousCount =
+      Number(
+        decryptValue(localStorage.getItem("aK6yXpz6DaODC1ANor4lAkIlRBenAxfLJZUVIXtJ8Ws=") || "")
+      ) || 0;
+
+    if (!isAnonymous && storedCount >= normalLimit) {
       alert("You have reached the maximum submission limit.");
+      return;
+    }
+
+    if (isAnonymous && storedAnonymousCount >= anonymousLimit) {
+      alert("You have reached the maximum anonymous submission limit.");
       return;
     }
 
@@ -93,20 +120,33 @@ export default function ContactSuggestionForm() {
         email: newErrors.email?._errors[0],
         message: newErrors.message?._errors[0],
       });
-
       return;
     }
 
     setErrors({});
+    setIsLoading(true);
 
     await axios.post("https://portfolio-backend-qu7x.onrender.com/users", submittedData);
 
-    const newCount = allowedCount + 1;
-    setAllowedCount(newCount);
-    localStorage.setItem("submissionCount", newCount.toString());
+    if (isAnonymous) {
+      const newAnonymousCount = storedAnonymousCount + 1;
+      setAnonymousCount(newAnonymousCount);
+      // aK6yXpz6DaODC1AxfL4lAkIlRBenJZUVIXtANorJ8Ws=
+
+      localStorage.setItem(
+        "aK6yXpz6DaODC1ANor4lAkIlRBenAxfLJZUVIXtJ8Ws=",
+        encryptValue(newAnonymousCount.toString())
+      );
+    } else {
+      const newCount = storedCount + 1;
+      setAllowedCount(newCount);
+      // mz/lGwzFqYHUMGoc92TG4g==
+      localStorage.setItem("mz/lFqGwzGocYHUM92TG4g==", encryptValue(newCount.toString()));
+    }
 
     setFormData({ firstName: "", lastName: "", email: "", message: "" });
     setIsAnonymous(false);
+    setIsLoading(false);
   };
 
   return (
@@ -117,37 +157,43 @@ export default function ContactSuggestionForm() {
           <h2 className="text-xl font-bold text-white">Contact & Suggestion Form</h2>
         </div>
 
-        <div className="group relative inline-block">
-          <div className=" flex w-32 cursor-pointer items-center  gap-x-1 rounded-full border-2 border-AAsecondary p-2 text-AAsecondary">
-            <span className="block pl-1 text-sm font-medium sm:inline">Disclaimer</span>
+        {!UserStatusActive && (
+          <div className="group relative inline-block">
+            <div className=" flex w-32 cursor-pointer items-center  gap-x-1 rounded-full border-2 border-AAsecondary p-2 text-AAsecondary">
+              <span className="block pl-1 text-sm font-medium sm:inline">Disclaimer</span>
 
-            <Image src={DisclaimerIcon} alt="Icon" width={20} />
-          </div>
-          <div className="invisible absolute bottom-full left-1/2 mb-3 w-72 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-            <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/95 to-gray-800/95 p-4 shadow-[0_0_30px_rgba(79,70,229,0.15)] backdrop-blur-md">
-              <div className="mb-2 flex items-center gap-3">
-                <div className="flex size-8 items-center justify-center rounded-full bg-AAsecondary/20">
-                  <svg viewBox="0 0 20 20" fill="currentColor" className="size-4 text-AAsecondary">
-                    <path
-                      clipRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
+              <Image src={DisclaimerIcon} alt="Icon" width={20} />
+            </div>
+            <div className="invisible absolute bottom-full left-1/2 mb-3 w-72 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/95 to-gray-800/95 p-4 shadow-[0_0_30px_rgba(79,70,229,0.15)] backdrop-blur-md">
+                <div className="mb-2 flex items-center gap-3">
+                  <div className="flex size-8 items-center justify-center rounded-full bg-AAsecondary/20">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="size-4 text-AAsecondary"
+                    >
+                      <path
+                        clipRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm font-semibold text-white">Note</h3>
                 </div>
-                <h3 className="text-sm font-semibold text-white">Note</h3>
+                <div className="space-y-2">
+                  <p className="text-sm text-gray-300">
+                    My portfolio backend on Render may enter sleep mode after 15 minutes. If the
+                    submission delays or fails, please try again. Thanks for your patience!{" "}
+                  </p>
+                </div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-50 blur-xl" />
+                <div className="absolute -bottom-1.5 left-1/2 size-3 -translate-x-1/2 rotate-45 border-b border-r border-white/10 bg-gradient-to-br from-gray-900/95 to-gray-800/95" />
               </div>
-              <div className="space-y-2">
-                <p className="text-sm text-gray-300">
-                  My portfolio backend on Render may enter sleep mode after 15 minutes. If the
-                  submission delays or fails, please try again. Thanks for your patience!{" "}
-                </p>
-              </div>
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-50 blur-xl" />
-              <div className="absolute -bottom-1.5 left-1/2 size-3 -translate-x-1/2 rotate-45 border-b border-r border-white/10 bg-gradient-to-br from-gray-900/95 to-gray-800/95" />
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       <p className=" text-sm text-white">
@@ -234,7 +280,6 @@ export default function ContactSuggestionForm() {
             <div className="flex  h-[27px] w-12 items-center rounded-full border border-gray-500  bg-red-400 pl-7 text-white   outline-none transition-all duration-300 peer-checked:bg-AAsecondary/80 peer-checked:pl-2 peer-checked:shadow-green-600 peer-focus:outline-none" />
             <svg
               className="absolute left-7 top-1 size-5 stroke-gray-900 opacity-100 transition-all duration-500 peer-checked:opacity-0"
-              // height={100}
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 100 100"
               width={100}
@@ -266,7 +311,7 @@ export default function ContactSuggestionForm() {
           </Label>
         </div>
 
-        <Button className="w-32">Send</Button>
+        <Button className="w-32">{isLoading ? "Sending..." : "Send"}</Button>
       </form>
     </div>
   );

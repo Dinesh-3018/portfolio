@@ -225,12 +225,7 @@ export default function SomethingIveBuilt() {
           size-full grid-cols-12 content-center   py-4 md:grid"
           >
             <div className="relative col-span-7 size-full rounded ">
-              <Link
-                target={"_blank"}
-                href={
-                  "https://pg-review-guard-frontend-ie2p4t77w-dineshgaids-projects.vercel.app/home"
-                }
-              >
+              <Link target={"_blank"} href={"https://pg-review-guard-frontend.vercel.app/home"}>
                 <div
                   // onClick={}
                   className="absolute size-full rounded     opacity-10 
@@ -259,12 +254,7 @@ export default function SomethingIveBuilt() {
             >
               <div className="z-10 flex flex-col space-y-1 md:items-end">
                 <span className="text-base text-AAsecondary">Recent Project</span>
-                <Link
-                  target={"_blank"}
-                  href={
-                    "https://pg-review-guard-frontend-ie2p4t77w-dineshgaids-projects.vercel.app/home"
-                  }
-                >
+                <Link target={"_blank"} href={"https://pg-review-guard-frontend.vercel.app/home"}>
                   <span className=" text-xl font-bold text-AAsecondary hover:cursor-pointer md:text-gray-200">
                     Property Reviewer
                   </span>
@@ -303,11 +293,7 @@ export default function SomethingIveBuilt() {
               </ul>
               <div className="fle-row z-10 flex space-x-5 ">
                 <GithubIcon link="https://github.com/Dinesh-3018/PG_review_guard_frontend" />
-                <ExternalLink
-                  url={
-                    "https://pg-review-guard-frontend-ie2p4t77w-dineshgaids-projects.vercel.app/home"
-                  }
-                />
+                <ExternalLink url={"https://pg-review-guard-frontend.vercel.app/home"} />
               </div>
             </div>
           </div>
