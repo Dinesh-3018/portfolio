@@ -9,27 +9,30 @@ import ExperienceBuddy from "@/components/sections/roadmap";
 import ButtonGradient from "@/components/svg/button-gradient";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+
 export default function Home() {
-  const [UserStatusActive, UserSetStatusActive] = useState(() => {
-    const cookieValue = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("UserStatusActive="))
-      ?.split("=")[1];
-    return cookieValue ? cookieValue === "true" : false;
-  });
+  const [UserStatusActive, UserSetStatusActive] = useState<boolean>(false);
+
+  useEffect(() => {
+    const storedValue =
+      typeof window !== "undefined" ? localStorage.getItem("UserStatusActive") : null;
+    if (storedValue !== null) {
+      UserSetStatusActive(storedValue === "true");
+    }
+  }, []);
 
   const HandlerForStatus = (value: boolean) => {
     UserSetStatusActive(value);
-    if (value) {
-      document.cookie = `UserStatusActive=${value}; path=/; max-age=${60 * 60 * 24}`;
-    } else {
-      document.cookie = "UserStatusActive=; path=/; max-age=0";
+    if (typeof window !== "undefined") {
+      localStorage.setItem("UserStatusActive", String(value));
     }
   };
 
   useEffect(() => {
     return () => {
-      document.cookie = "UserStatusActive=; path=/; max-age=0";
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("UserStatusActive");
+      }
     };
   }, []);
   return (
