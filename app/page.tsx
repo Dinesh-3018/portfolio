@@ -8,8 +8,7 @@ import SomethingIveBuilt from "@/components/sections/projects";
 import ExperienceBuddy from "@/components/sections/roadmap";
 import ButtonGradient from "@/components/svg/button-gradient";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 export default function Home() {
   const [UserStatusActive, UserSetStatusActive] = useState(() => {
     const cookieValue = document.cookie
